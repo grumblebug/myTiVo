@@ -12,10 +12,6 @@
 <div id="hedda"><b> 
 
 #if len($folders) > 1
-<a href="/TiVoConnect?Command=QueryContainer&amp;Container=$quote($folders[0])&amp;Format=text/html">
-#end if
-Push from $folders[0]
-#if len($folders) > 1
 </a>
   #if len($folders) > 2
     #for $pos, $n in enumerate($folders[1:-1])
@@ -27,6 +23,7 @@ Push from $folders[0]
 #end if
 </b></div>
 <p>
+      <input type="button" value="Home" onClick="location.href='/'">
       <input type="hidden" name="Command" value="Push">
       <input type="hidden" name="Container" value="$name">
         <select name="tsn">
