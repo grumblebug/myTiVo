@@ -4,29 +4,23 @@
 <head>
 <title>pyTivo - ToGo</title>
 <link rel="stylesheet" type="text/css" href="/main.css">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
 </head>
 <body>
+<div id="hedda"><b>Programs on $tname</b></div>
 <form action="/TiVoConnect" method="POST">
-<p id="titlep"><span id="title">
-<a href="/">pyTivo</a> /
-  #if $folder != ''
-<a href="/TiVoConnect?Command=NPL&amp;Container=$quote($container)&amp;TiVo=$tivoIP">
-  #end if
-Pull from $tname
-  #if $folder != ''
-</a> /
-    #if '/' in $title
-      #set $folders = $title.split('/')[1:]
-      #for $f in $folders[:-1]
-        $f /
-      #end for
-      $folders[-1]
-    #else
-      $title
-    #end if
-  #end if
-</span></p>
-<table id="main">
+<input type="button" value="Home" onClick="location.href='/'">
+ <input type="hidden" name="Command" value="ToGo">
+ <input type="hidden" name="Container" value="$container">
+ <input type="hidden" name="TiVo" value="$tivoIP">
+#if $has_tivodecode
+ <input type="checkbox" name="decode">Convert 
+#end if
+ <input type="checkbox" name="save">Meta 
+ <input value="Save" type="submit">
+<br>
+<div id="scrolltab">
+<table id="nplmain">
   #if $ItemStart > 0
 	<tr><td colspan="5">
 	#set $Offset = -($ItemStart + 1)
@@ -114,21 +108,9 @@ Pull from $tname
 					</div>
 				#end if
 			#end if
-		</td>
-		<td class="progsize">
-                #if 'SourceSize' in $row
-                $row['SourceSize']
-                #end if
-                <br>
-                #if 'Duration' in $row
-		$row['Duration']
-                #end if
-		</td>
-		<td class="progdate">
-                #if 'CaptureDate' in $row
-                $row['CaptureDate']
-                #end if
-                </td>
+		<br><span class="progsize">$row['SourceSize']
+		$row['Duration']</span>
+		<span class="progdate">$row['CaptureDate']</span></td>
 	  #end if
 	  </tr>
   #end for
@@ -139,21 +121,7 @@ Pull from $tname
      </td></tr>
   #end if
 </table>
-<p>
- <input type="hidden" name="Command" value="ToGo">
- <input type="hidden" name="Container" value="$container">
- <input type="hidden" name="TiVo" value="$tivoIP">
-#if $has_tivodecode
- <input type="checkbox" name="decode">Decrypt with tivodecode<br>
-#end if
- <input type="checkbox" name="save">Save metadata to .txt<br>
-#if $togo_mpegts
- <input type="checkbox" name="ts_format">Transfer as mpeg-ts<br>
-#end if
-</p>
-<p>
- <input value="Transfer Selected" type="submit">
-</p>
 </form>
+</div>
 </body>
 </html>
