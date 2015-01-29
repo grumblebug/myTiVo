@@ -4,12 +4,13 @@
 <head>
 <title>pyTivo - Push</title>
 <link rel="stylesheet" type="text/css" href="/main.css">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
 </head>
 <body>
 #set $folders = $name.split('/')
 <form action="/TiVoConnect" method="POST">
-<p id="titlep"><span id="title">
-<a href="/">pyTivo</a> /
+<div id="hedda"><b> 
+
 #if len($folders) > 1
 <a href="/TiVoConnect?Command=QueryContainer&amp;Container=$quote($folders[0])&amp;Format=text/html">
 #end if
@@ -24,8 +25,26 @@ Push from $folders[0]
   #end if
 / $folders[-1]
 #end if
-</span></p>
-<table id="main">
+</b></div>
+<p>
+      <input type="hidden" name="Command" value="Push">
+      <input type="hidden" name="Container" value="$name">
+        <select name="tsn">
+        #for $tivo in $tivos
+            #if 'name' in $tivos[$tivo] and not $tivo.startswith('{')
+                <option>$tivos[$tivo]['name']</option>
+            #end if
+        #end for
+        #for $tivo in $tivos
+            #if not 'name' in $tivos[$tivo] and not $tivo.startswith('{')
+                <option>$tivo</option>
+            #end if
+        #end for
+        </select>
+      <input value="Send to TiVo" type="submit">
+</p>
+<div id="scrolltah">
+<table id="nplmain">
   #set $i = 0
   ## i variable is used to alternate colors of row
   ## loop through passed data printing row for each show or folder
@@ -67,23 +86,7 @@ Push from $folders[0]
 	  </tr>
   #end for
 </table>
-<p>
-      <input type="hidden" name="Command" value="Push">
-      <input type="hidden" name="Container" value="$name">
-        <select name="tsn">
-        #for $tivo in $tivos
-            #if 'name' in $tivos[$tivo] and not $tivo.startswith('{')
-                <option>$tivos[$tivo]['name']</option>
-            #end if
-        #end for
-        #for $tivo in $tivos
-            #if not 'name' in $tivos[$tivo] and not $tivo.startswith('{')
-                <option>$tivo</option>
-            #end if
-        #end for
-        </select>
-      <input value="Send to TiVo" type="submit">
-</p>
+</div>
 </form>
 </body>
 </html>
