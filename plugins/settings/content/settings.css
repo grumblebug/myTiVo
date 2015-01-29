@@ -10,7 +10,7 @@ table#main {
     height: 85%;
     text-align: left;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
 }
 
 div#settings, div#sidesections {
@@ -27,15 +27,19 @@ td.ulined {
 }
 
 div#leftframe {
-    width: 200px;
+    width: 185px;
     height: 100%;
     overflow: hidden
 }
 
 div#settings, div#sidesections, div.sett-sect, div.help-sect {
-    width: 350px;
+    width: 360px;
     height: 100%;
-    overflow: auto
+    padding: 2px;
+    margin: 4px;
+    bottom: 6px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 div#leftframe, div.sett-sect {
