@@ -13,7 +13,8 @@ body {
 }
 
 #titlep {
-    text-align: center;
+    text-align: left;
+    padding: 3px;
 }
 
 #title {
