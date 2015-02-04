@@ -10,13 +10,12 @@
 #set $folders = $name.split('/')
 <form action="/TiVoConnect" method="POST">
 <div id="hedda"><b> 
-
 #if len($folders) > 1
 </a>
   #if len($folders) > 2
     #for $pos, $n in enumerate($folders[1:-1])
       #set $ppath = '/'.join($folders[:$pos + 2])
-/ <a href="/TiVoConnect?Command=QueryContainer&amp;Container=$quote($ppath)&amp;Format=text/html">$n</a>
+/ $n
     #end for
   #end if
 / $folders[-1]
