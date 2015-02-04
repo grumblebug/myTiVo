@@ -1,0 +1,6 @@
+*.pyc
+*.bak
+*.log
+pyTivo.config
+bin/*
+.project
