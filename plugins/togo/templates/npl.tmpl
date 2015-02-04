@@ -41,9 +41,9 @@
 	    ## This is a folder
 		<td></td>
 		<td><img src="/folder.png" alt=""></td>
-		<td class="progmain"><a href='/TiVoConnect?Command=NPL&amp;Container=$quote($container)&amp;Folder=$quote(row["Url"])&amp;TiVo=$tivoIP'>$row['Title'] </a></td>
-		<td class="progsize">$row["TotalItems"] Items</td>
-		<td class="progdate">$row["LastChangeDate"]</td>
+		<td class="progmain"><a href='/TiVoConnect?Command=NPL&amp;Container=$quote($container)&amp;Folder=$quote(row["Url"])&amp;TiVo=$tivoIP'>$row['Title'] </a><br>
+		<span class="progsize">$row["TotalItems"] Items</span>
+		<span class="progdate">$row["LastChangeDate"]</span>
 	  #else
 	    ## This is a show
 		<td>
