@@ -4,3 +4,4 @@
 pyTivo.config
 bin/*
 .project
+.pydevproject
