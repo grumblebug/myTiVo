@@ -21,7 +21,6 @@
 / $folders[-1]
 #end if
 </b></div>
-<p>
       <input type="button" value="Home" onClick="location.href='/'">
       <input type="hidden" name="Command" value="Push">
       <input type="hidden" name="Container" value="$name">
@@ -38,7 +37,7 @@
         #end for
         </select>
       <input value="Send to TiVo" type="submit">
-</p>
+<br>
 <div id="scrolltab">
 <table id="nplmain">
   #set $i = 0
@@ -52,9 +51,9 @@
 	    ## This is a folder
 		<td></td>
 		<td><img src="/folder.png" alt=""></td>
-		<td class="progmain"><a href="/TiVoConnect?Command=QueryContainer&amp;Container=$quote($name)/$quote($video.name)&amp;Format=text/html">$video.title</a></td>
-		<td class="progsize">$video.total_items Items</td>
-		<td class="progdate">$video.textDate</td>
+		<td class="progmain"><a href="/TiVoConnect?Command=QueryContainer&amp;Container=$quote($name)/$quote($video.name)&amp;Format=text/html">$video.title</a><br>
+		<span class="progsize">$video.total_items Items</span>
+		<span class="progdate">$video.textDate</span>
 	  #else
 	    ## This is a show
 		<td>
@@ -75,9 +74,9 @@
 			$video.displayMajorNumber $video.callsign
 			#end if
 			</span>
-		</td>
-		<td class="progsize">$video.textSize</td>
-		<td class="progdate">$video.textDate</td>
+		<br>
+		<span class="progsize">$video.textSize</span>
+		<span class="progdate">$video.textDate</span>
 	  #end if
 	  </tr>
   #end for
