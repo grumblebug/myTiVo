@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>pyTivo - ToGo</title>
+<link rel="stylesheet" type="text/css" href="/main.css">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+</head>
+<body>
+<div id="hedda"><b>Programs on $tname</b></div>
+<form action="/TiVoConnect" method="POST">
+<input type="button" value="Home" onClick="location.href='/'">
+ <input type="hidden" name="Command" value="ToGo">
+ <input type="hidden" name="Container" value="$container">
+ <input type="hidden" name="TiVo" value="$tivoIP">
+#if $has_tivodecode
+ <input type="checkbox" name="decode">Convert 
+#end if
+ <input type="checkbox" name="save">Meta 
+ <input value="Save" type="submit">
+<br>
+<div id="scrolltab">
+<table id="nplmain">
+  #if $ItemStart > 0
+	<tr><td colspan="5">
+	#set $Offset = -($ItemStart + 1)
+	#if $Offset < -($shows_per_page+1)
+           #set $Offset = -($shows_per_page+1)
+	#end if
+	<a href="/TiVoConnect?Command=NPL&amp;Container=$quote($container)&amp;TiVo=$tivoIP&amp;AnchorItem=$FirstAnchor&amp;AnchorOffset=$Offset&amp;Folder=$quote($folder)">Previous Page</a>
+	</td></tr>
+  #end if
+  #set $i = 0
+  ## i variable is used to alternate colors of row
+  ## loop through passed data printing row for each show or folder
+  #for $row in $data
+	  #set $i += 1
+	  #set $j = $i%2
+	  <tr class="row$(j)">
+	  #if $row['ContentType'].startswith('x-tivo-container')
+	    ## This is a folder
+		<td></td>
+		<td><img src="/folder.png" alt=""></td>
+		<td class="progmain"><a href='/TiVoConnect?Command=NPL&amp;Container=$quote($container)&amp;Folder=$quote(row["Url"])&amp;TiVo=$tivoIP'>$row['Title'] </a><br>
+		<span class="progsize">$row["TotalItems"] Items</span>
+		<span class="progdate">$row["LastChangeDate"]</span>
+	  #else
+	    ## This is a show
+		<td>
+		#if 'Url' in $row and not ($row['Url'] in $status and ($status[$row['Url']]['running'] or $status[$row['Url']]['queued'])) and not ('CopyProtected' in $row and $row['CopyProtected'] == 'Yes') and not ('Icon' in $row and $row['Icon'] == 'urn:tivo:image:in-progress-recording')
+			<input type="checkbox" name="Url" value="$row['Url']">
+		#end if
+		</td>
+		<td>
+		#if 'CopyProtected' in $row and $row['CopyProtected'] == 'Yes'
+			<img src="/nocopy.png" alt="">
+		#elif 'Icon' in $row
+		    <!-- Display icons similar to TiVo colored circles -->
+			#if $row['Icon'] == 'urn:tivo:image:expires-soon-recording'
+				<img src="/soon.png" alt="">
+			#else if $row['Icon'] == 'urn:tivo:image:expired-recording'
+				<img src="/expired.png" alt="">
+			#else if $row['Icon'] == 'urn:tivo:image:save-until-i-delete-recording'
+				<img src="/kuid.png" alt="">
+			#else if $row['Icon'] == 'urn:tivo:image:in-progress-recording'
+				<img src="/recording.png" alt="">
+			#end if
+		#end if
+		</td>
+		<td class="progmain">
+			#if 'episodeTitle' in $row
+			<span class="progtitle">$row['title']: $row['episodeTitle']</span>
+			#else
+			<span class="progtitle">$row['title']</span>
+			#end if
+			<span class="progdesc">#if 'description' in $row
+			$row['description']
+			#end if
+			#if 'displayMajorNumber' in $row and 'callsign' in $row
+			$row['displayMajorNumber'] $row['callsign']
+			#end if
+			</span>
+			#if 'Url' in $row and row['Url'] in $status
+				#set $this_status = $status[$row['Url']]
+				#if $this_status['running'] and $this_status['rate'] != ""
+					<div class="transferring">
+					#set $gb = '%.3f GB' % (float($this_status['size']) / (1024 ** 3))
+					Transfering - $this_status['rate']<br>$gb
+					<a href="/TiVoConnect?Command=ToGoStop&amp;Container=$quote($container)&amp;Url=$quote($row['Url'])">Stop Transfer</a>
+					</div>
+				#elif $this_status['running'] and $this_status['rate'] == ""
+					<div class="transferring">
+					Initiating Transfer<br>
+					Please Wait
+					</div>
+				#elif $this_status['error']
+					<div class="failed">
+					Error - $this_status['error']<br>
+					</div>
+				#elif $this_status['finished']
+					<div>
+					Transfer Complete
+					</div>
+				#elif $this_status['queued']
+					<div class="queued">
+					Queued: $queue.index($row['Url'])<br>
+					<a href="/TiVoConnect?Command=Unqueue&amp;Container=$quote($container)&amp;Url=$quote($row['Url'])&amp;TiVo=$tivoIP">Unqueue</a>
+					</div>
+				#end if
+			#end if
+		<br><span class="progsize">$row['SourceSize']
+		$row['Duration']</span>
+		<span class="progdate">$row['CaptureDate']</span></td>
+	  #end if
+	  </tr>
+  #end for
+  #if ($TotalItems - $ItemCount) > ($ItemStart + 1)
+     <tr><td colspan="5">
+     #set $Offset = $shows_per_page - 1
+     <a href="/TiVoConnect?Command=NPL&amp;Container=$quote($container)&amp;TiVo=$tivoIP&amp;AnchorItem=$FirstAnchor&amp;AnchorOffset=$Offset&amp;Folder=$quote($folder)">Next Page</a>
+     </td></tr>
+  #end if
+</table>
+</form>
+</div>
+</body>
+</html>

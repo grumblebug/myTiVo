@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>pyTivo - Push</title>
+<link rel="stylesheet" type="text/css" href="/main.css">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+</head>
+<body>
+#set $folders = $name.split('/')
+<form action="/TiVoConnect" method="POST">
+<div id="hedda"><b> 
+#if len($folders) > 1
+</a>
+  #if len($folders) > 2
+    #for $pos, $n in enumerate($folders[1:-1])
+      #set $ppath = '/'.join($folders[:$pos + 2])
+/ $n
+    #end for
+  #end if
+/ $folders[-1]
+#end if
+</b></div>
+      <input type="button" value="Home" onClick="location.href='/'">
+      <input type="hidden" name="Command" value="Push">
+      <input type="hidden" name="Container" value="$name">
+        <select name="tsn">
+        #for $tivo in $tivos
+            #if 'name' in $tivos[$tivo] and not $tivo.startswith('{')
+                <option>$tivos[$tivo]['name']</option>
+            #end if
+        #end for
+        #for $tivo in $tivos
+            #if not 'name' in $tivos[$tivo] and not $tivo.startswith('{')
+                <option>$tivo</option>
+            #end if
+        #end for
+        </select>
+      <input value="Send to TiVo" type="submit">
+<br>
+<div id="scrolltab">
+<table id="nplmain">
+  #set $i = 0
+  ## i variable is used to alternate colors of row
+  ## loop through passed data printing row for each show or folder
+  #for $video in $videos
+	  #set $i += 1
+	  #set $j = $i%2
+	  <tr class="row$(j)">
+	  #if $video.is_dir
+	    ## This is a folder
+		<td></td>
+		<td><img src="/folder.png" alt=""></td>
+		<td class="progmain"><a href="/TiVoConnect?Command=QueryContainer&amp;Container=$quote($name)/$quote($video.name)&amp;Format=text/html">$video.title</a><br>
+		<span class="progsize">$video.total_items Items</span>
+		<span class="progdate">$video.textDate</span>
+	  #else
+	    ## This is a show
+		<td>
+            <input type="checkbox" name="File" value="$video.part_path">
+		</td>
+        <td></td>
+		<td class="progmain">
+			#if $video.episodeTitle
+			<span class="progtitle">$video.title: $video.episodeTitle</span>
+			#else
+			<span class="progtitle">$video.title</span>
+			#end if
+			<span class="progdesc">
+            #if $video.description
+			$video.description
+			#end if
+			#if $video.displayMajorNumber and $video.callsign
+			$video.displayMajorNumber $video.callsign
+			#end if
+			</span>
+		<br>
+		<span class="progsize">$video.textSize</span>
+		<span class="progdate">$video.textDate</span>
+	  #end if
+	  </tr>
+  #end for
+</table>
+</div>
+</form>
+</body>
+</html>
