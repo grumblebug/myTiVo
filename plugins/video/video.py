@@ -27,7 +27,7 @@ SCRIPTDIR = os.path.dirname(__file__)
 
 CLASS_NAME = 'Video'
 
-PUSHED = '<h3>Queued for Push to %s</h3> <p>%s</p>'
+PUSHED = '<img src=ok.png><h3>Queued for Push to %s</h3> <p>%s</p>'
 
 # Preload the templates
 def tmpl(name):

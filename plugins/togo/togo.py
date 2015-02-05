@@ -35,19 +35,19 @@ DEFPATH = '/TiVoConnect?Command=QueryContainer&Container=/NowPlaying'
 
 # Some error/status message templates
 
-MISSING = """<h3>Missing Data</h3> <p>You must set both "tivo_mak" and 
+MISSING = """<img src=stop.png><h3>Missing Data</h3> <p>You must set both "tivo_mak" and 
 "togo_path" before using this function.</p>"""
 
-TRANS_QUEUE = """<h3>Queued for Transfer</h3> <p>%s</p> <p>queued for 
+TRANS_QUEUE = """<img src=ok.png><h3>Queued for Transfer</h3> <p>%s</p> <p>queued for 
 transfer to:</p> <p>%s</p>"""
 
-TRANS_STOP = """<h3>Transfer Stopped</h3> <p>Your transfer of:</p> 
+TRANS_STOP = """<img src=ok.png><h3>Transfer Stopped</h3> <p>Your transfer of:</p> 
 <p>%s</p> <p>has been stopped.</p>"""
 
-UNQUEUE = """<h3>Removed from Queue</h3> <p>%s</p> <p>has been removed 
+UNQUEUE = """<img src=ok.png><h3>Removed from Queue</h3> <p>%s</p> <p>has been removed 
 from the queue.</p>"""
 
-UNABLE = """<h3>Unable to Connect to TiVo</h3> <p>pyTivo was unable to 
+UNABLE = """<img src=warn.png><h3>Unable to Connect to TiVo</h3> <p>pyTivo was unable to 
 connect to the TiVo at %s.</p> <p>This is most likely caused by an 
 incorrect Media Access Key. Please return to the Settings page and 
 double check your <b>tivo_mak</b> setting.</p> <pre>%s</pre>"""
