@@ -128,7 +128,10 @@ class ToGo(Plugin):
             baseurl = '%s://%s%s' % (protocol, ip_port, path)
             theurl = baseurl
             if 'Folder' in query:
-                theurl = urlparse.urljoin(theurl, folder) # Avoid suggestions here?
+                if uggestions in Folder: #The suggestions folder will not populate due to a TiVo bug so just don't show it.
+                    print "Skipping the Suggestions folder."
+                else:
+                    theurl = urlparse.urljoin(theurl, folder)   
             theurl += '&ItemCount=%d' % shows_per_page
             if 'AnchorItem' in query:
                 theurl += '&AnchorItem=' + quote(query['AnchorItem'][0])
