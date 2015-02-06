@@ -128,8 +128,7 @@ class ToGo(Plugin):
             baseurl = '%s://%s%s' % (protocol, ip_port, path)
             theurl = baseurl
             if 'Folder' in query:
-                folder = query['Folder'][0]
-                theurl = urlparse.urljoin(theurl, folder)
+                theurl = urlparse.urljoin(theurl, folder) # Avoid suggestions here?
             theurl += '&ItemCount=%d' % shows_per_page
             if 'AnchorItem' in query:
                 theurl += '&AnchorItem=' + quote(query['AnchorItem'][0])
