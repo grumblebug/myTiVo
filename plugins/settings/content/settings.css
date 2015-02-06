@@ -19,7 +19,8 @@ div#settings, div#sidesections {
 
 td.panel {
     vertical-align: top;
-    height: 100%
+    height: 100%;
+    overflow: hidden
 }
 
 td.ulined {
@@ -33,13 +34,13 @@ div#leftframe {
 }
 
 div#settings, div#sidesections, div.sett-sect, div.help-sect {
-    width: 360px;
-    height: 100%;
-    padding: 2px;
+    width: 400px;
+    height: 98%;
+    padding: 1px;
     margin: 4px;
     bottom: 6px;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden
 }
 
 div#leftframe, div.sett-sect {
@@ -49,7 +50,10 @@ div#leftframe, div.sett-sect {
 div.add-button, div.add-field, div.sett-sect, div.help-sect {
     position: absolute;
     left: 0px;
-    top: 0px
+    top: 0px;
+    padding: 1px;
+    width: 385px;
+    overflow-y: auto
 }
 
 div.add-button {
@@ -57,5 +61,6 @@ div.add-button {
 }
 
 div.add-field, div.sett-sect {
-    display: none
+    display: none;
+    padding: 2px;
 }
