@@ -45,7 +45,7 @@ BASE_HTML = """<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
 <link rel="stylesheet" type="text/css" href="/main.css">
 </head> <body> %s </body> </html>"""
 
-RELOAD = '<img src="prog5a.gif"><p>%s %d</p>'
+RELOAD = '<img src="prog5a.gif"><p>Reloading Page</p>'
 UNSUP = '<img src=stop.png><h3>Unsupported Command</h3> <p>Query:</p> <ul>%s</ul>'
 
 class TivoHTTPServer(SocketServer.ThreadingMixIn, BaseHTTPServer.HTTPServer):
