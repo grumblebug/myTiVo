@@ -62,7 +62,7 @@ tr.row1 {
     background-color: #f0f0f7;
     border-radius: 9px;
     top: 85px;
-    bottom: 4px;
+    bottom: 6px;
     width: 92%;
     overflow-y: auto;
 }
@@ -75,12 +75,13 @@ tr.row1 {
     background-color: #f0f0f7;
     border-top-left-radius: 9px;
     border-bottom-left-radius: 9px;
+    bottom: 8px;
 }
 
 #bigmain {
     position: absolute;
     top: 50px;
-    bottom: 4px;
+    bottom: 8px;
     border: 1px solid #979797;
     padding: 2px;
     margin: 4px;
@@ -96,7 +97,7 @@ tr.row1 {
 #scrolltab {
     position: absolute; 
     top: 78px;
-    bottom: 4px;
+    bottom: 8px;
     overflow-y: auto;
     border: 1px solid #979797;
     padding: 0;
