@@ -2,6 +2,6 @@
 *.bak
 *.log
 pyTivo.conf
-bin/*
+bin/
 .project
 .pydevproject
