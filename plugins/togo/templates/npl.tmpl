@@ -40,11 +40,20 @@
 	  <tr class="row$(j)">
 	  #if $row['ContentType'].startswith('x-tivo-container')
 	    ## This is a folder
-		<td></td>
-		<td><img src="/folder.png" alt=""></td>
-		<td class="progmain"><a href='/TiVoConnect?Command=NPL&amp;Container=$quote($container)&amp;Folder=$quote(row["Url"])&amp;TiVo=$tivoIP'>$row['Title'] </a><br>
-		<span class="progsize">$row["TotalItems"] Items</span>
-		<span class="progdate">$row["LastChangeDate"]</span>
+		## There is a TiVo side bug for the suggestions folder. Igore it.
+		#if $row ['Url'].endswith('2F0')
+		   <td></td>
+		   <td></td>
+		   <td></td>
+		   <span></span>
+		   <span></span>
+		#else
+		  <td></td>
+		  <td><img src="/folder.png" alt=""></td>
+		  <td class="progmain"><a href='/TiVoConnect?Command=NPL&amp;Container=$quote($container)&amp;Folder=$quote(row["Url"])&amp;TiVo=$tivoIP'>$row['Title'] </a><br>
+		  <span class="progsize">$row["TotalItems"] Items</span>
+		  <span class="progdate">$row["LastChangeDate"]</span>
+	  	#end if
 	  #else
 	    ## This is a show
 		<td>
