@@ -1,8 +1,8 @@
 body {
-    color: #fffacd;
+    color: #232323;
     padding: 1px;
     font-family: Helvetica, sans-serif;
-    background-color: #00002e;
+    background-color: #d5e1fA;
 }
 
 #hedda {
@@ -23,11 +23,11 @@ body {
 }
 
 tr.row0 {
-    background: #000020;
+    background: #e0e0f7;
 }
 
 tr.row1 {
-    background: #00002e;
+    background: #f0f0f3;
 }
 
 .progtitle {
@@ -42,24 +42,24 @@ tr.row1 {
 }
 
 .transferring {
-    background: #000020;
+    background: #7fff7f;
 }
 
 .queued {
-    background: #000020;
+    background: #ffff7f;
 }
 
 .failed {
-    background: #000020;
+    background: #ff7f7f;
 }
 
 #main {
     position: absolute;
-    border: 2px solid #fff8dc;
+    border: 2px solid #979797;
     padding: 4px;
     border-spacing: 0;
     border-collapse: collapse;
-    background-color: #000020;
+    background-color: #f0f0f7;
     border-radius: 9px;
     top: 85px;
     bottom: 8px;
@@ -72,7 +72,7 @@ tr.row1 {
     padding: 8px;
     border-spacing: 0;
     border-collapse: collapse;
-    background-color: #000020;
+    background-color: #f0f0f7;
     border-top-left-radius: 9px;
     border-bottom-left-radius: 9px;
     bottom: 8px;
@@ -82,12 +82,12 @@ tr.row1 {
     position: absolute;
     top: 50px;
     bottom: 8px;
-    border: 1px solid #fff8dc;
+    border: 1px solid #979797;
     padding: 2px;
     margin: 4px;
     border-spacing: 0;
     border-collapse: collapse;
-    background-color: #000020;
+    background-color: #f0f0f7;
     border-radius: 9px;
     border: none;
     height: 88%;
@@ -99,19 +99,16 @@ tr.row1 {
     top: 78px;
     bottom: 8px;
     overflow-y: auto;
-    border: 1px solid #fff8dc;
+    border: 1px solid #979797;
     padding: 0;
     border-spacing: 0;
     border-collapse: collapse;
     width: 94%;
     border-top-left-radius: 9px;
     border-bottom-left-radius: 9px;
-    background-color: #000020;
+    background-color: #f0f0f7;
 }
 
-h3 {
-   color: #ffff99
-}
 td {
     padding: 2px;
 }
@@ -144,20 +141,20 @@ img {
 
 a:link {
     text-decoration:none;
-    color: #fffacd;
+    color: #232392;
     font-weight: bold;
     padding: 2px;
 }
 
 a:visited {
     text-decoration:none;
-    color: #fffacd;
+    color: #232392;
     font-weight: bold;
     padding: 2px;
 }
 a:hover {
     text-decoration:none;
-    color: #ffff99;
+    color: #232392;
     font-weight: bold;
     padding: 2px;    
 }
