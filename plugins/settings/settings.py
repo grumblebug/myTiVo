@@ -19,7 +19,7 @@ pyTivo.conf file and all changes should now be in effect.</p>"""
 
 RESTART_MSG = """<img src=ok.png><h3>Restart</h3> <p>pyTivo will now restart.</p>"""
 
-GOODBYE_MSG = 'Goodbye.\n'
+GOODBYE_MSG = 'The server is shut down. Goodbye.\n'
 
 SETTINGS_MSG = """<img src=warn.png><h3>Settings Saved</h3> <p>Your settings have been 
 saved to the pyTivo.conf file. However you may need to do a <b>Soft 
