@@ -2,7 +2,7 @@ body {
     color: #fffacd;
     padding: 1px;
     font-family: Helvetica, sans-serif;
-    background-color: #00004a;
+    background-color: #4a4a4a;
 }
 
 #hedda {
@@ -23,11 +23,11 @@ body {
 }
 
 tr.row0 {
-    background: #000038;
+    background: #383838;
 }
 
 tr.row1 {
-    background: #00004a;
+    background: #4a4a4a;
 }
 
 .progtitle {
@@ -43,15 +43,15 @@ tr.row1 {
 }
 
 .transferring {
-    background: #000038;
+    background: #383838;
 }
 
 .queued {
-    background: #000038;
+    background: #383838;
 }
 
 .failed {
-    background: #000038;
+    background: #383838;
 }
 
 #main {
@@ -60,7 +60,7 @@ tr.row1 {
     padding: 4px;
     border-spacing: 0;
     border-collapse: collapse;
-    background-color: #000038;
+    background-color: #383838;
     border-radius: 9px;
     top: 85px;
     bottom: 8px;
@@ -73,7 +73,7 @@ tr.row1 {
     padding: 8px;
     border-spacing: 0;
     border-collapse: collapse;
-    background-color: #000038;
+    background-color: #383838;
     border-top-left-radius: 9px;
     border-bottom-left-radius: 9px;
     bottom: 8px;
@@ -88,7 +88,7 @@ tr.row1 {
     margin: 4px;
     border-spacing: 0;
     border-collapse: collapse;
-    background-color: #000038;
+    background-color: #383838;
     border-radius: 9px;
     border: none;
     height: 88%;
@@ -107,7 +107,7 @@ tr.row1 {
     width: 94%;
     border-top-left-radius: 9px;
     border-bottom-left-radius: 9px;
-    background-color: #000038;
+    background-color: #383838;
 }
 
 h3 {

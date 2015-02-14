@@ -2,7 +2,7 @@ body {
     color: #fffacd;
     padding: 1px;
     font-family: Helvetica, sans-serif;
-    background-color: #2f0000;
+    background-color: #4a0000;
 }
 
 #hedda {
@@ -23,11 +23,11 @@ body {
 }
 
 tr.row0 {
-    background: #200000;
+    background: #380000;
 }
 
 tr.row1 {
-    background: #2f0000;
+    background: #4a0000;
 }
 
 .progtitle {
@@ -39,18 +39,19 @@ tr.row1 {
 .progdesc {
     font-size: small;
     margin: 4px;
+    color: #fafafa;
 }
 
 .transferring {
-    background: #200000;
+    background: #380000;
 }
 
 .queued {
-    background: #200000;
+    background: #380000;
 }
 
 .failed {
-    background: #200000;
+    background: #380000;
 }
 
 #main {
@@ -59,7 +60,7 @@ tr.row1 {
     padding: 4px;
     border-spacing: 0;
     border-collapse: collapse;
-    background-color: #200000;
+    background-color: #380000;
     border-radius: 9px;
     top: 85px;
     bottom: 8px;
@@ -72,7 +73,7 @@ tr.row1 {
     padding: 8px;
     border-spacing: 0;
     border-collapse: collapse;
-    background-color: #200000;
+    background-color: #380000;
     border-top-left-radius: 9px;
     border-bottom-left-radius: 9px;
     bottom: 8px;
@@ -87,7 +88,7 @@ tr.row1 {
     margin: 4px;
     border-spacing: 0;
     border-collapse: collapse;
-    background-color: #200000;
+    background-color: #380000;
     border-radius: 9px;
     border: none;
     height: 88%;
@@ -106,7 +107,7 @@ tr.row1 {
     width: 94%;
     border-top-left-radius: 9px;
     border-bottom-left-radius: 9px;
-    background-color: #200000;
+    background-color: #380000;
 }
 
 h3 {
@@ -127,6 +128,7 @@ td.progmain {
     font-weight: bold;
     font-style:italic;
     margin: 4px;
+    color: #fafafa;
 }
 
 .progdate {
@@ -136,6 +138,7 @@ td.progmain {
     font-weight: bold;
     font-style:italic;
     margin: 2px;
+    color: #fafafa;
 }
 
 img {
