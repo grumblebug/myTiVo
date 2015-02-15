@@ -3,5 +3,6 @@
 *.log
 pyTivo.conf
 bin/
+colors/
 .project
 .pydevproject
