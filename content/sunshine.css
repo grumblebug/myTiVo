@@ -2,7 +2,7 @@ body {
     color: #232323;
     padding: 1px;
     font-family: Helvetica, sans-serif;
-    background-color: #d5e1fA;
+    background-color: #fefe00;
 }
 
 #hedda {
@@ -23,11 +23,11 @@ body {
 }
 
 tr.row0 {
-    background: #e0e0f7;
+    background: #efef00;
 }
 
 tr.row1 {
-    background: #f0f0f3;
+    background: #fefe00;
 }
 
 .progtitle {
@@ -42,15 +42,15 @@ tr.row1 {
 }
 
 .transferring {
-    background: #7fff7f;
+    background: #efef00;
 }
 
 .queued {
-    background: #ffff7f;
+    background: #efef00;
 }
 
 .failed {
-    background: #ff7f7f;
+    background: #efef00;
 }
 
 #main {
@@ -59,7 +59,7 @@ tr.row1 {
     padding: 4px;
     border-spacing: 0;
     border-collapse: collapse;
-    background-color: #f0f0f7;
+    background-color: #efef00;
     border-radius: 9px;
     top: 85px;
     bottom: 8px;
@@ -72,7 +72,7 @@ tr.row1 {
     padding: 8px;
     border-spacing: 0;
     border-collapse: collapse;
-    background-color: #f0f0f7;
+    background-color: #efef00;
     border-top-left-radius: 9px;
     border-bottom-left-radius: 9px;
     bottom: 8px;
@@ -87,7 +87,7 @@ tr.row1 {
     margin: 4px;
     border-spacing: 0;
     border-collapse: collapse;
-    background-color: #f0f0f7;
+    background-color: #efef00;
     border-radius: 9px;
     border: none;
     height: 88%;
@@ -106,7 +106,7 @@ tr.row1 {
     width: 94%;
     border-top-left-radius: 9px;
     border-bottom-left-radius: 9px;
-    background-color: #f0f0f7;
+    background-color: #efef00;
 }
 
 td {
