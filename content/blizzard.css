@@ -1,0 +1,162 @@
+body {
+    color: #232323;
+    padding: 1px;
+    font-family: Helvetica, sans-serif;
+    background-color: #fdfdfd;
+}
+
+#hedda {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 4px;
+}
+
+#titlep {
+    text-align: left;
+    padding: 3px;
+}
+
+#title {
+    font-size: large;
+    font-weight: bold;
+}
+
+tr.row0 {
+    background: #efefef;
+}
+
+tr.row1 {
+    background: #fdfdfd;
+}
+
+.progtitle {
+    font-weight: bold;
+    display: block;
+    margin: 4px;
+}
+
+.progdesc {
+    font-size: small;
+    margin: 4px;
+}
+
+.transferring {
+    background: #efefef;
+}
+
+.queued {
+    background: #efefef;
+}
+
+.failed {
+    background: #efefef;
+}
+
+#main {
+    position: absolute;
+    border: 2px solid #979797;
+    padding: 4px;
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: #efefef;
+    border-radius: 9px;
+    top: 85px;
+    bottom: 8px;
+    width: 92%;
+    overflow-y: auto;
+}
+
+#nplmain {
+    border: 0;
+    padding: 8px;
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: #efefef;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    bottom: 8px;
+}
+
+#bigmain {
+    position: absolute;
+    top: 50px;
+    bottom: 8px;
+    border: 2px solid #979797;
+    padding: 2px;
+    margin: 4px;
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: #efefef;
+    border-radius: 9px;
+    height: 88%;
+    width: auto%;
+}
+
+#scrolltab {
+    position: absolute; 
+    top: 78px;
+    bottom: 8px;
+    overflow-y: auto;
+    border: 2px solid #979797;
+    padding: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 94%;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    background-color: #efefef;
+}
+
+td {
+    padding: 2px;
+}
+
+td.progmain {
+    width: 100%;
+}
+
+.progsize {
+    white-space: nowrap;
+    text-align: left;
+    font-size: small;
+    font-weight: bold;
+    font-style:italic;
+    margin: 4px;
+}
+
+.progdate {
+    white-space: nowrap;
+    text-align: left;
+    font-size: small;
+    font-weight: bold;
+    font-style:italic;
+    margin: 2px;
+}
+
+img {
+    border: 0;
+}
+
+a:link {
+    text-decoration:none;
+    color: #545454;
+    font-weight: bold;
+    padding: 2px;
+}
+
+a:visited {
+    text-decoration:none;
+    color: #545454;
+    font-weight: bold;
+    padding: 2px;
+}
+a:hover {
+    text-decoration:none;
+    color: #313131;
+    font-weight: bold;
+    padding: 2px;    
+}
+p.hidden {
+    visibility: hidden;
+}
