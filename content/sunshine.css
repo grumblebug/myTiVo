@@ -82,14 +82,13 @@ tr.row1 {
     position: absolute;
     top: 50px;
     bottom: 8px;
-    border: 1px solid #979797;
+    border: 2px solid #979797;
     padding: 2px;
     margin: 4px;
     border-spacing: 0;
     border-collapse: collapse;
     background-color: #efef00;
     border-radius: 9px;
-    border: none;
     height: 88%;
     width: auto%;
 }
@@ -99,7 +98,7 @@ tr.row1 {
     top: 78px;
     bottom: 8px;
     overflow-y: auto;
-    border: 1px solid #979797;
+    border: 2px solid #979797;
     padding: 0;
     border-spacing: 0;
     border-collapse: collapse;
